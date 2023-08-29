@@ -1,5 +1,6 @@
 "use client";
 
+import AddReviewButton from "@/components/AddReviewButton";
 import NavBar from "@/components/NavBar";
 import {
   Button,
@@ -8,6 +9,7 @@ import {
   Grid,
   GridItem,
   Heading,
+  Show,
 } from "@chakra-ui/react";
 
 const Home = () => {
@@ -24,6 +26,9 @@ const Home = () => {
         <NavBar />
       </GridItem>
       <GridItem area="main"></GridItem>
+      <Show breakpoint="(max-width: 750px)">
+        <AddReviewButton />
+      </Show>
     </Grid>
   );
 };
