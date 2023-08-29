@@ -1,9 +1,31 @@
 "use client";
 
-import { Button, Card, CardBody, Heading } from "@chakra-ui/react";
+import NavBar from "@/components/NavBar";
+import {
+  Button,
+  Card,
+  CardBody,
+  Grid,
+  GridItem,
+  Heading,
+} from "@chakra-ui/react";
 
 const Home = () => {
-  return <div></div>;
+  return (
+    <Grid
+      templateAreas={{
+        base: `"nav" "main"`,
+      }}
+      templateColumns={{
+        base: "1fr",
+      }}
+    >
+      <GridItem area="nav">
+        <NavBar />
+      </GridItem>
+      <GridItem area="main"></GridItem>
+    </Grid>
+  );
 };
 
 export default Home;
