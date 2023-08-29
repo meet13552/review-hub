@@ -1,6 +1,7 @@
 "use client";
 
 import AddReviewButton from "@/components/AddReviewButton";
+import AddReviewPopup from "@/components/AddReviewPopup";
 import NavBar from "@/components/NavBar";
 import {
   Button,
@@ -11,8 +12,19 @@ import {
   Heading,
   Show,
 } from "@chakra-ui/react";
+import { useState } from "react";
 
 const Home = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <Grid
       templateAreas={{
@@ -23,11 +35,12 @@ const Home = () => {
       }}
     >
       <GridItem area="nav">
-        <NavBar />
+        <NavBar openModal={openModal} />
       </GridItem>
       <GridItem area="main"></GridItem>
+      <AddReviewPopup isOpen={isModalOpen} onClose={closeModal} />
       <Show breakpoint="(max-width: 750px)">
-        <AddReviewButton />
+        <AddReviewButton openModal={openModal} />
       </Show>
     </Grid>
   );
