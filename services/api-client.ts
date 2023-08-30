@@ -1,8 +1,11 @@
+// HuggingFace API Calling Service
+
 interface Props {
   reviewText: string;
 }
 
 async function analyzeSentiment(reviewText: string) {
+  // API KEY
   const apiKey = process.env.NEXT_PUBLIC_HUGGINGFACE_API_KEY;
   try {
     const response = await fetch(

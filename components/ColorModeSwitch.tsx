@@ -1,3 +1,5 @@
+// Toggle button of dark mode
+
 import { MoonIcon } from "@chakra-ui/icons";
 import { HStack, Switch, Text, useColorMode } from "@chakra-ui/react";
 

@@ -1,5 +1,7 @@
 "use client";
 
+//NavBar consisting of logo (text), Add Review Button and Toggle
+
 import { Button, HStack, Heading, Show } from "@chakra-ui/react";
 import { AddIcon } from "@chakra-ui/icons";
 import React from "react";

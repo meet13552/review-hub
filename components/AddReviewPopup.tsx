@@ -1,3 +1,5 @@
+// Modal after clicking on Add Review (Popup)
+
 import { analyzeSentiment } from "@/services/api-client";
 import {
   Modal,
@@ -22,13 +24,13 @@ import SentimentTag from "./SentimentTag";
 interface Props {
   isOpen: boolean;
   onClose: () => void;
-  addReview: (review: string, highestScoreLabel: string) => void;
+  addReview: (review: string, sentiment: string) => void;
 }
 
 function AddReviewPopup({ isOpen, onClose, addReview }: Props) {
-  const [reviewText, setReviewText] = useState("");
-  const [sentiment, setSentiment] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
+  const [reviewText, setReviewText] = useState(""); //Review
+  const [sentiment, setSentiment] = useState(""); //Sentiment
+  const [isLoading, setIsLoading] = useState(false); //Whether loading or not
   const [error, setError] = useState<string | null>(null); // State to store error message
 
   useEffect(() => {
@@ -40,6 +42,7 @@ function AddReviewPopup({ isOpen, onClose, addReview }: Props) {
     }
   }, [isOpen]);
 
+  //Function for sentiment analysis
   const handleAnalyzeClick = async () => {
     if (!reviewText.trim()) {
       setError("Review cannot be empty.");
@@ -51,7 +54,7 @@ function AddReviewPopup({ isOpen, onClose, addReview }: Props) {
       const sentiment = await analyzeSentiment(reviewText);
       setSentiment(sentiment);
 
-      // Add review and highestScoreLabel to the main page
+      // Add review and sentiment to the main page
       addReview(reviewText, sentiment);
     } catch (error) {
       // Handle error if needed

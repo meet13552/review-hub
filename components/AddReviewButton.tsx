@@ -1,5 +1,7 @@
+// Add Reiew button for mobile (Floating Button)
+
 import { AddIcon } from "@chakra-ui/icons";
-import { Button, IconButton } from "@chakra-ui/react";
+import { IconButton } from "@chakra-ui/react";
 import React from "react";
 
 interface Props {
