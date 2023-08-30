@@ -1,25 +1,42 @@
 import React from "react";
-import { Box, Text, Badge } from "@chakra-ui/react";
+import {
+  Box,
+  Text,
+  Badge,
+  Card,
+  CardBody,
+  SimpleGrid,
+  HStack,
+} from "@chakra-ui/react";
+import SentimentTag from "./SentimentTag";
+import { CalendarIcon } from "@chakra-ui/icons";
 
 interface Props {
   reviewData: {
     review: string;
-    highestScoreLabel: string;
+    sentiment: string;
     dateTime: string;
   };
 }
 
 const ReviewCard = ({ reviewData }: Props) => {
-  const { review, highestScoreLabel, dateTime } = reviewData;
+  const { review, sentiment, dateTime } = reviewData;
 
   return (
-    <Box borderWidth="1px" borderRadius="lg" p="4" m="4">
-      <Text>{review}</Text>
-      <Badge mt="2" colorScheme="teal">
-        {highestScoreLabel}
-      </Badge>
-      <p>Posted on: {dateTime}</p>
-    </Box>
+    <Card>
+      <CardBody>
+        <HStack marginBottom={2}>
+          <CalendarIcon color="teal" />
+          <Text as="b" color="teal">
+            {dateTime}
+          </Text>
+        </HStack>
+        <Text marginBottom={3} fontSize="xl">
+          {review}
+        </Text>
+        <SentimentTag sentiment={sentiment} />
+      </CardBody>
+    </Card>
   );
 };
 
