@@ -3,7 +3,7 @@
 A movie review web application using Next.js that allows users to input a movie review, generate a sentiment analysis of the review, and store that in a table for others to agree/disagree with.
 ## Demo
 
-https://review-hub-gilt.vercel.app/
+https://review-cqcw328sb-meet13552.vercel.app
 
 
 ## Run Locally
