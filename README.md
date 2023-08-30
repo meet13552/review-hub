@@ -1,6 +1,11 @@
 
 # Review Hub
 A movie review web application using Next.js that allows users to input a movie review, generate a sentiment analysis of the review, and store that in a table for others to agree/disagree with.
+## Demo
+
+https://review-hub-gilt.vercel.app/
+
+
 ## Run Locally
 
 Prerequisite: Node v18.17.1
@@ -8,7 +13,7 @@ Prerequisite: Node v18.17.1
 Clone the project
 
 ```bash
-  git clone https://github.com/meet13552/review-hub.git
+  https://github.com/meet13552/review-hub.git
 ```
 
 Go to the project directory
