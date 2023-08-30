@@ -5,7 +5,7 @@ import AddReviewPopup from "@/components/AddReviewPopup";
 import NavBar from "@/components/NavBar";
 import ReviewCard from "@/components/ReviewCard";
 import { Grid, GridItem, Show, SimpleGrid } from "@chakra-ui/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 //Interface for Reviews
@@ -65,9 +65,6 @@ const Home = () => {
       newUpvotes[id] = (prevUpvotes[id] || 0) + 1;
       return newUpvotes;
     });
-
-    // Trigger sorting after upvote
-    sortReviews();
   };
 
   const handleDownvote = (id: string) => {
@@ -76,9 +73,6 @@ const Home = () => {
       newDownvotes[id] = (prevDownvotes[id] || 0) + 1;
       return newDownvotes;
     });
-
-    // Trigger sorting after downvote
-    sortReviews();
   };
 
   // Function to sort reviews based on upvotes + downvotes
@@ -96,6 +90,10 @@ const Home = () => {
 
     setReviews(sortedReviews);
   };
+
+  useEffect(() => {
+    sortReviews();
+  }, [upvotes, downvotes]);
 
   return (
     <Grid
