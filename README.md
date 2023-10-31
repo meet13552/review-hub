@@ -9,21 +9,21 @@ A movie review web application using Next.js that allows users to input a movie 
 
 Create a web app using React and node.js that has the following components. Note, these are
 suggestions, as long as the web app can perform the actions described, you are free to
-construct a UI that you believe is best:
+construct a UI that you believe is best: <br />
 ● A button labeled “Add Review” that will open a textbox where users can input text.
-Example text is provided at the bottom of this document.
-● A button labeled "Analyze" that will process the sentiment analysis.
-● A component that displays the result (e.g., "Positive", "Negative", or "Neutral").
+Example text is provided at the bottom of this document. <br />
+● A button labeled "Analyze" that will process the sentiment analysis. <br />
+● A component that displays the result (e.g., "Positive", "Negative", or "Neutral"). <br />
 ● Integration with AI/ML tool, such as HuggingFace. Note, each tool outputs a different value, and you
 may need to set thresholds for “Positive”, “Negative”, or “Neutral” outputs. Call the API
 when the “Analyze” button is clicked and display the result on the frontend. You do NOT
-need to train your own model.
+need to train your own model. <br />
 ● Each analyzed review, along with the date and time of the review, should be added to a
-table
+table <br />
 ● The user should be able to upvote/downvote the review, and all reviews in the table are
 sorted by number of votes. For the purpose of this assessment, assume that you can
-upvote/downvote as many times as you like.
-● You are not required to store information in a database, and can store it in app state.
+upvote/downvote as many times as you like. <br />
+● You are not required to store information in a database, and can store it in app state. <br />
 
 ## Demo
 
